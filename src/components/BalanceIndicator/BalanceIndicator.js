@@ -12,7 +12,9 @@ const BalanceIndicator = ({ registers }) => {
   return (
     <div className={styles.BalanceIndicator}>
       <span>Balance: </span>
-      <span style={balance < 0 ? { borderColor: 'red' } : null}>{balance}</span>
+      <span style={balance < 0 ? { borderColor: 'red' } : null}>
+        {(Math.round(balance * 100) / 100).toFixed(2)}
+      </span>
     </div>
   );
 };

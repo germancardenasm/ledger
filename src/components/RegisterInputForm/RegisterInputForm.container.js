@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { RegisterControl } from './RegisterControl';
+import { RegisterInputForm } from './RegisterInputForm';
 import { addRegister } from '../../redux/Ledger/ledger.actions';
 import moment from 'moment';
 
-const RegisterControlContainer = ({ type, title, color, addRegister }) => {
+const RegisterInputFormContainer = ({ type, title, color, addRegister }) => {
   const [state, setState] = useState({
     checkNumber: '',
     amount: '',
@@ -12,16 +12,27 @@ const RegisterControlContainer = ({ type, title, color, addRegister }) => {
 
   const onSubmitHandle = (event) => {
     event.preventDefault();
+
+    //Empty or Negative numbers are not accepted
+    if (
+      state.checkNumber < 0 ||
+      state.amount < 0 ||
+      state.checkNumber === '' ||
+      state.amount === ''
+    )
+      return;
+
+    //Dispatch the event to add a register
     addRegister({
       date: moment().format('YYYY-MM-DD h:mm:ss'),
       type,
       checkNumber: +state.checkNumber,
       amount: +state.amount,
     });
-    console.log('submit');
   };
 
-  const onChangeHandler = (event) => {
+  const onChangeInputHandler = (event) => {
+    //Update the state with numbers typed by user
     const { id, value } = event.target;
     setState({
       ...state,
@@ -30,11 +41,11 @@ const RegisterControlContainer = ({ type, title, color, addRegister }) => {
   };
 
   return (
-    <RegisterControl
+    <RegisterInputForm
       title={title}
       color={color}
       onSubmitHandle={onSubmitHandle}
-      onChangeHandler={onChangeHandler}
+      onChangeHandler={onChangeInputHandler}
       state={state}
     />
   );
@@ -46,4 +57,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(null, mapDispatchToProps)(RegisterControlContainer);
+export default connect(null, mapDispatchToProps)(RegisterInputFormContainer);

@@ -1,54 +1,15 @@
 import { ADD_REGISTER } from './ledger.types';
-import moment from 'moment';
 
 const INITIAL_STATE = {
   registers: [
     {
-      date: moment().format('YYYY-MM-DD h:mm:ss'),
+      date: '2020-07-11 12:24:49',
       type: 'credit',
       checkNumber: 3465,
       amount: 150,
     },
     {
-      date: moment().format('YYYY-MM-DD h:mm:ss'),
-      type: 'debit',
-      checkNumber: 1234,
-      amount: 250,
-    },
-
-    {
-      date: moment().format('YYYY-MM-DD h:mm:ss'),
-      type: 'credit',
-      checkNumber: 3465,
-      amount: 150,
-    },
-    {
-      date: moment().format('YYYY-MM-DD h:mm:ss'),
-      type: 'debit',
-      checkNumber: 1234,
-      amount: 250,
-    },
-    {
-      date: moment().format('YYYY-MM-DD h:mm:ss'),
-      type: 'credit',
-      checkNumber: 3465,
-      amount: 150,
-    },
-    {
-      date: moment().format('YYYY-MM-DD h:mm:ss'),
-      type: 'debit',
-      checkNumber: 1234,
-      amount: 250,
-    },
-
-    {
-      date: moment().format('YYYY-MM-DD h:mm:ss'),
-      type: 'credit',
-      checkNumber: 3465,
-      amount: 150,
-    },
-    {
-      date: moment().format('YYYY-MM-DD h:mm:ss'),
+      date: ' 2020-09-10 08:24:49',
       type: 'debit',
       checkNumber: 1234,
       amount: 250,
