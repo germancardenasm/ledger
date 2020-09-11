@@ -16,7 +16,7 @@ export const RegisterInputForm = ({
           <label htmlFor="checkNumber">Check Number: </label>
           <input
             required
-            type="number"
+            type="text"
             id="checkNumber"
             name="checkNumber"
             onChange={onChangeHandler}
@@ -30,7 +30,6 @@ export const RegisterInputForm = ({
             type="number"
             id="amount"
             name="amount"
-            step=".01"
             onChange={onChangeHandler}
             value={state.amount}
           />

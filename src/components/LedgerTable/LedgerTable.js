@@ -20,7 +20,7 @@ const LedgerTable = ({ registers }) => {
               <td className={styles.date}>{date}</td>
               <td className={styles.type}>{type}</td>
               <td className={styles.check}>{checkNumber}</td>
-              <td className={styles.amount}>${amount}</td>
+              <td className={styles.amount}>${amount.toFixed(2)}</td>
             </tr>
           ))}
         </tbody>

@@ -3,6 +3,12 @@ import { connect } from 'react-redux';
 import { RegisterInputForm } from './RegisterInputForm';
 import { addRegister } from '../../redux/Ledger/ledger.actions';
 import moment from 'moment';
+import * as yup from 'yup';
+
+let schema = yup.object().shape({
+  checkNumber: yup.string().required(),
+  amount: yup.number().required().positive().integer(),
+});
 
 const RegisterInputFormContainer = ({ type, title, color, addRegister }) => {
   const [state, setState] = useState({
@@ -29,16 +35,29 @@ const RegisterInputFormContainer = ({ type, title, color, addRegister }) => {
       checkNumber: +state.checkNumber,
       amount: +state.amount,
     });
+
+    setState({
+      checkNumber: '',
+      amount: '',
+    });
   };
 
   const onChangeInputHandler = (event) => {
     //Update the state with numbers typed by user
-    const { id, value } = event.target;
+    let { id, value } = event.target;
+
+    if (id === 'checkNumber') {
+      value = filterCheckNumberFormat(value);
+    }
+
     setState({
       ...state,
       [id]: value,
     });
   };
+
+  const filterCheckNumberFormat = (checkNumber) =>
+    checkNumber.replace(/[^\d]$/g, '');
 
   return (
     <RegisterInputForm
