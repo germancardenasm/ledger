@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { RegisterControl } from './components';
+import { RegisterControl, BalanceIndicator } from './components';
 import './App.css';
 
 const App = ({ registers }) => {
@@ -14,7 +14,8 @@ const App = ({ registers }) => {
         <RegisterControl type="credit" color="red" title="Subtract Debit" />
       </section>
       <main className="App-register-table">
-        <p>Ledger content</p>
+        <h2>Ledger</h2>
+        <BalanceIndicator />
         <table>
           <thead>
             <tr>

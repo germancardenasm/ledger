@@ -15,8 +15,8 @@ const RegisterControlContainer = ({ type, title, color, addRegister }) => {
     addRegister({
       date: moment().format('YYYY-MM-DD h:mm:ss'),
       type,
-      checkNumber: state.checkNumber,
-      amount: state.amount,
+      checkNumber: +state.checkNumber,
+      amount: +state.amount,
     });
     console.log('submit');
   };
