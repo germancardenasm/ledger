@@ -1,5 +1,7 @@
 .tableContainer {
-  flex: 1;
+  margin-bottom: 5px;
+  overflow-y: auto;
+  max-height: 300px;
 }
 
 table {

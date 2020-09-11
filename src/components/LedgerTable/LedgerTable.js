@@ -5,22 +5,22 @@ import styles from './LedgerTable.module.css';
 const LedgerTable = ({ registers }) => {
   return (
     <div className={styles.tableContainer}>
-      <table class={styles.scrollDown}>
+      <table className={styles.scrollDown}>
         <thead>
           <tr>
-            <th>Date:</th>
-            <th>Type:</th>
-            <th>Check:</th>
-            <th>Amount:</th>
+            <th className={styles.date}>Date:</th>
+            <th className={styles.type}>Type:</th>
+            <th className={styles.check}>Check:</th>
+            <th className={styles.amount}>Amount:</th>
           </tr>
         </thead>
         <tbody>
           {registers.map(({ date, type, checkNumber, amount }, rowIndex) => (
             <tr key={`row-${rowIndex}`}>
-              <th>{date}</th>
-              <th>{type}</th>
-              <th>{checkNumber}</th>
-              <th>${amount}</th>
+              <td className={styles.date}>{date}</td>
+              <td className={styles.type}>{type}</td>
+              <td className={styles.check}>{checkNumber}</td>
+              <td className={styles.amount}>${amount}</td>
             </tr>
           ))}
         </tbody>
