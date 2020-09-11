@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { RegisterControl, BalanceIndicator } from './components';
+import { RegisterControl, BalanceIndicator, LedgerTable } from './components';
 import './App.css';
 
 const App = ({ registers }) => {
@@ -13,29 +13,10 @@ const App = ({ registers }) => {
         <RegisterControl type="debit" color="green" title="Add Deposit" />
         <RegisterControl type="credit" color="red" title="Subtract Debit" />
       </section>
-      <main className="App-register-table">
+      <main className="App-ledger-table">
         <h2>Ledger</h2>
         <BalanceIndicator />
-        <table>
-          <thead>
-            <tr>
-              <th>Date:</th>
-              <th>Type:</th>
-              <th>Check:</th>
-              <th>Amount:</th>
-            </tr>
-          </thead>
-          <tbody>
-            {registers.map(({ date, type, checkNumber, amount }, rowIndex) => (
-              <tr key={`row-${rowIndex}`}>
-                <th>{date}</th>
-                <th>{type}</th>
-                <th>{checkNumber}</th>
-                <th>{amount}</th>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+        <LedgerTable />
       </main>
     </div>
   );

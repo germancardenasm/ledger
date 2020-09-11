@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .App-header {
@@ -19,22 +22,12 @@
   align-items: center;
   padding: 15px 0;
 }
-
-.App-register-table table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
-
-.App-register-table td,
-.App-register-table th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
-
-.App-register-table tr:nth-child(even) {
-  background-color: #dddddd;
+.App-ledger-table {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 @media (min-width: 768px) {

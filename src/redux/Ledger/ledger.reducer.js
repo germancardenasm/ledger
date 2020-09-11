@@ -15,6 +15,44 @@ const INITIAL_STATE = {
       checkNumber: 1234,
       amount: 250,
     },
+
+    {
+      date: moment().format('YYYY-MM-DD h:mm:ss'),
+      type: 'credit',
+      checkNumber: 3465,
+      amount: 150,
+    },
+    {
+      date: moment().format('YYYY-MM-DD h:mm:ss'),
+      type: 'debit',
+      checkNumber: 1234,
+      amount: 250,
+    },
+    {
+      date: moment().format('YYYY-MM-DD h:mm:ss'),
+      type: 'credit',
+      checkNumber: 3465,
+      amount: 150,
+    },
+    {
+      date: moment().format('YYYY-MM-DD h:mm:ss'),
+      type: 'debit',
+      checkNumber: 1234,
+      amount: 250,
+    },
+
+    {
+      date: moment().format('YYYY-MM-DD h:mm:ss'),
+      type: 'credit',
+      checkNumber: 3465,
+      amount: 150,
+    },
+    {
+      date: moment().format('YYYY-MM-DD h:mm:ss'),
+      type: 'debit',
+      checkNumber: 1234,
+      amount: 250,
+    },
   ],
 };
 
