@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { RegisterControl } from './components';
 import './App.css';
 
 const App = ({ registers }) => {
@@ -9,25 +10,30 @@ const App = ({ registers }) => {
         <h1 className="App-title">Perficient National Bank</h1>
       </header>
       <section className="App-controls">
-        <p>Ledger controls</p>
+        <RegisterControl type="debit" color="green" title="Add Deposit" />
+        <RegisterControl type="credit" color="red" title="Subtract Debit" />
       </section>
       <main className="App-register-table">
         <p>Ledger content</p>
         <table>
-          <tr>
-            <th>Date:</th>
-            <th>Type:</th>
-            <th>Check:</th>
-            <th>Amount:</th>
-          </tr>
-          {registers.map(({ date, type, checkNumber, amount }, rowIndex) => (
-            <tr key={`row-${rowIndex}`}>
-              <th>{date}</th>
-              <th>{type}</th>
-              <th>{checkNumber}</th>
-              <th>{amount}</th>
+          <thead>
+            <tr>
+              <th>Date:</th>
+              <th>Type:</th>
+              <th>Check:</th>
+              <th>Amount:</th>
             </tr>
-          ))}
+          </thead>
+          <tbody>
+            {registers.map(({ date, type, checkNumber, amount }, rowIndex) => (
+              <tr key={`row-${rowIndex}`}>
+                <th>{date}</th>
+                <th>{type}</th>
+                <th>{checkNumber}</th>
+                <th>{amount}</th>
+              </tr>
+            ))}
+          </tbody>
         </table>
       </main>
     </div>
