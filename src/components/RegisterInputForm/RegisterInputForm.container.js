@@ -3,12 +3,6 @@ import { connect } from 'react-redux';
 import { RegisterInputForm } from './RegisterInputForm';
 import { addRegister } from '../../redux/Ledger/ledger.actions';
 import moment from 'moment';
-import * as yup from 'yup';
-
-let schema = yup.object().shape({
-  checkNumber: yup.string().required(),
-  amount: yup.number().required().positive().integer(),
-});
 
 const RegisterInputFormContainer = ({ type, title, color, addRegister }) => {
   const [state, setState] = useState({
